@@ -27,6 +27,9 @@ header,
     overflow: hidden;
 }
 
+g[stroke-linecap="butt"]{
+    transition: opacity 0.2s linear;
+}
 
 header {
     position: sticky;
@@ -55,10 +58,10 @@ header {
     animation: nav-btn-black-animation 1s forwards;
 
 }
-
+/* 
 .stay-curious {
     padding: 4em 0;
-}
+} */
 
 .header-container,
 .buttons,
@@ -125,6 +128,7 @@ header {
 
 .stay-curious article h2 {
     font-size: 1.2em;
+    font-weight: 500;
 }
 
 .section-title {
@@ -262,6 +266,11 @@ nav ul li a {
         font-size: 1em;
     }
 
+    .stay-curious article h1 {
+        font-size: 2.5em;
+        font-family: Spectral, serif;
+    }    
+
     .header-container .buttons li.extra {
         display: block;
     }
@@ -275,19 +284,9 @@ nav ul li a {
         flex-direction: row;
     }
 
-    .stay-curious .article-container article {
-        flex: 2;
-    }
-
     .stay-curious .article-container svg {
         display: block;
-        position: absolute;
-        width: 200% !important;
-    }
-
-    .stay-curious .article-container .svg-container {
-        position: relative;
-        flex: 1;
+        transform: translateX(3.5em) !important;
     }
 
     .trending-on-medium .article-container {
@@ -305,6 +304,10 @@ nav ul li a {
 @media screen and (min-width:768px) {
     .trending-on-medium .article-container .article {
         width: 29%;
+    }
+
+    .stay-curious article h1 {
+        font-size: 3.5em;
     }
 
     .aside-and-articles {
