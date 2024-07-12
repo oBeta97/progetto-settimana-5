@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 0.9rem;
     line-height: 1.3rem;
     font-family: Roboto, Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
     color: #191919
@@ -28,13 +29,21 @@ header,
     border-bottom: 1px solid #191919;
 }
 
+.stay-curious{
+    padding: 4em 0;
+}
+
 .header-container,
 .buttons,
 .section-title,
 .article,
-.article-container .author,
+.author,
 .trending-on-medium article .article-details,
-.tag-container ul {
+.tag-container ul,
+.articles-container nav ul,
+.article-details,
+.articles-container article,
+.articles-container article .image-content{
     display: flex;
     flex-direction: row;
 }
@@ -42,7 +51,8 @@ header,
 .header-container,
 .article-container,
 .trending-container,
-.aside-container{
+.aside-container,
+.articles-container{
     width: 90%;
     margin: 0 auto;
     padding: 2em 0;
@@ -104,7 +114,7 @@ header,
     font-size: 0.8em;
 }
 
-
+.articles-container,
 .trending-on-medium article{
     display: flex;
     flex-direction: column;
@@ -115,7 +125,9 @@ header,
     padding: 0;
 }
 
-.article{
+.article,
+.article-details,
+.articles-container article{
     gap: 1em;
 }
 
@@ -134,17 +146,18 @@ header,
     width: 1.5em;
 }
 
-.article-container .author{
+.author{
     gap: 0.5em;
     align-items: center;
 }
 
-.article-container .author h4{
+.author h4{
     font-size: 0.8em;
 }
 
 .article-container .article-details p,
-.tag-container li{
+.tag-container li,
+.articles-container nav ul li a{
     color: #747474;
 }
 
@@ -156,13 +169,57 @@ nav ul{
     list-style-type: none;
 }
 
+nav ul li a{
+    text-decoration: none;
+}
+
 .tag-container li{
     padding: 1em;
     border: 1px solid #747474;
     width: fit-content;
 }
 
-.tag-container ul{
+.tag-container ul,
+.articles-container nav ul{
     flex-wrap: wrap; 
     gap: 1em;
+}
+
+.article-details .save{
+    flex-grow: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.tag{
+    background-color: #E3E5E7;
+    border-radius: 20px;
+    padding: 1px 5px;
+}
+
+.article-details{
+    align-items: center;
+}
+
+.articles-container article .text-content h4 ~ *,
+.articles-container article .text-content .article-details *{
+    color: #747474;
+}
+
+
+.articles-container article .text-content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+    justify-content: space-between;
+    min-width: 70%;
+}
+
+.articles-container article .image-content img {
+    display: block;
+    max-width: 100%;
+}
+
+.articles-container article .image-content{
+    align-items: center;
 }
