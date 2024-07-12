@@ -47,6 +47,15 @@ header {
     animation: nav-back-yellow-animation 1s forwards;
 }
 
+.nav-btn-green-animation{
+    animation: nav-btn-green-animation 1s forwards;
+}
+
+.nav-btn-black-animation{
+    animation: nav-btn-black-animation 1s forwards;
+
+}
+
 .stay-curious {
     padding: 4em 0;
 }
