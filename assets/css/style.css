@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,30 +12,42 @@
     color: #191919
 }
 
-header{
-    position: sticky;
-    top: 0;
-    right: 0;
-    width: 100%;
-    z-index: 99;
-}
-
-body section{
+body section {
     border-bottom: 1px solid #E3E5E7;
 }
 
-.header-container .buttons li.extra{
+.header-container .buttons li.extra {
     display: none;
 }
 
 header,
-.stay-curious{
+.stay-curious {
     background-color: #ffc017;
     border-bottom: 1px solid #191919;
     overflow: hidden;
 }
 
-.stay-curious{
+
+header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100%;
+    /* Opzione per il cambio colore della nav ma fa un brutto effetto al refresh della pagina */
+    /* transition: background-color 0.3s linear; */
+    z-index: 99;
+}
+
+.nav-color-animation {
+    /* background-color: #fff; */
+    animation: nav-bar-animation 1s forwards;
+}
+
+.nav-back-yellow-animation {
+    animation: nav-back-yellow-animation 1s forwards;
+}
+
+.stay-curious {
     padding: 4em 0;
 }
 
@@ -46,10 +58,10 @@ header,
 .author,
 .trending-on-medium article .article-details,
 .tag-container ul,
-.articles-container nav ul,
+.pseudo-footer ul,
 .article-details,
 .articles-container article,
-.articles-container article .image-content{
+.articles-container article .image-content {
     display: flex;
     flex-direction: row;
 }
@@ -58,13 +70,13 @@ header,
 .article-container,
 .trending-container,
 .aside-container,
-.articles-container{
+.articles-container {
     width: 90%;
     margin: 0 auto;
     padding: 2em 0;
 }
 
-.buttons{
+.buttons {
     flex-grow: 1;
     list-style-type: none;
     justify-content: end;
@@ -72,11 +84,11 @@ header,
 }
 
 .sign-in a,
-.btn{
+.btn {
     text-decoration: none;
 }
 
-.btn{
+.btn {
     background-color: #191919;
     color: white;
     padding: 10px 1em;
@@ -84,12 +96,12 @@ header,
     width: fit-content;
 }
 
-.stay-curious svg{
+.stay-curious svg {
     display: none;
 }
 
 .article-container,
-.stay-curious article{
+.stay-curious article {
     display: flex;
     flex-direction: column;
     gap: 2.5em;
@@ -97,123 +109,127 @@ header,
     padding: 4em 0;
 }
 
-.stay-curious article h1{
-    font-family: Spectral;
+.stay-curious article h1 {
+    font-family: Spectral, serif;
     font-size: 3.5em;
 }
 
-.stay-curious article h2{
+.stay-curious article h2 {
     font-size: 1.2em;
 }
 
-.section-title{
+.section-title {
     align-items: center;
     gap: 0.8em;
 }
 
-.section-title>*{
+.section-title>* {
     display: inline-block;
 }
 
 
-.section-title h2{
+.section-title h2 {
     font-size: 0.8em;
 }
 
 .articles-container,
-.trending-on-medium article{
+.trending-on-medium article {
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-.article-container{
+.article-container {
     padding: 0;
 }
 
 .article,
 .article-details,
-.articles-container article{
+.articles-container article {
     gap: 1em;
 }
 
-.trending-on-medium article .article-details{
+.trending-on-medium article .article-details {
     justify-content: space-between;
 }
 
-.article-counter h4{
+.article-counter h4 {
     color: #E3E5E7;
     font-size: 2em;
     font-weight: 800;
 }
 
-.author img{
+.author img {
     border-radius: 50%;
     width: 1.5em;
 }
 
-.author{
+.author {
     gap: 0.5em;
     align-items: center;
 }
 
-.author h4{
+.author h4 {
     font-size: 0.8em;
 }
 
 .article-container .article-details p,
 .tag-container li,
-.articles-container nav ul li a{
+.pseudo-footer ul li a {
     color: #747474;
 }
 
-.thin-font{
+.thin-font {
     font-weight: 300;
 }
 
-nav ul{
+nav ul {
     list-style-type: none;
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
 }
 
-.tag-container li{
+.tag-container li {
     padding: 1em;
     border: 1px solid #747474;
     width: fit-content;
 }
 
 .tag-container ul,
-.articles-container nav ul{
-    flex-wrap: wrap; 
+.pseudo-footer ul {
+    flex-wrap: wrap;
     gap: 1em;
 }
 
-.article-details .save{
+.pseudo-footer {
+    margin-top: 2em;
+}
+
+.article-details .save {
     flex-grow: 1;
     display: flex;
     justify-content: right;
 }
 
-.tag{
+.tag {
     background-color: #E3E5E7;
     border-radius: 20px;
     padding: 1px 5px;
 }
 
-.article-details{
+.article-details {
     align-items: center;
 }
 
-.articles-container article .text-content h4 ~ *,
-.articles-container article .text-content .article-details *{
+.articles-container article .text-content h4~*,
+.articles-container article .text-content .article-details * {
     color: #747474;
 }
 
 
-.articles-container article .text-content{
+.articles-container article .text-content {
     display: flex;
     flex-direction: column;
     gap: 0.7em;
@@ -226,63 +242,63 @@ nav ul li a{
     max-width: 100%;
 }
 
-.articles-container article .image-content{
+.articles-container article .image-content {
     align-items: center;
     flex: 1;
 }
 
 
 @media screen and (min-width: 576px) {
-    *{
+    * {
         font-size: 1em;
     }
 
-    .header-container .buttons li.extra{
+    .header-container .buttons li.extra {
         display: block;
     }
 
-    .header-container .buttons a{
+    .header-container .buttons a {
         font-size: 0.8em;
     }
 
-    .stay-curious .article-container{
+    .stay-curious .article-container {
         display: flex;
         flex-direction: row;
     }
 
-    .stay-curious .article-container article{
+    .stay-curious .article-container article {
         flex: 2;
     }
 
-    .stay-curious .article-container svg{
+    .stay-curious .article-container svg {
         display: block;
         position: absolute;
         width: 200% !important;
     }
 
-    .stay-curious .article-container .svg-container{
+    .stay-curious .article-container .svg-container {
         position: relative;
         flex: 1;
     }
 
-    .trending-on-medium .article-container{
+    .trending-on-medium .article-container {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
-    .trending-on-medium .article-container .article{
+
+    .trending-on-medium .article-container .article {
         width: 46%;
     }
 
 }
 
 @media screen and (min-width:768px) {
-    .trending-on-medium .article-container .article{
+    .trending-on-medium .article-container .article {
         width: 29%;
     }
 
-    .aside-and-articles{
+    .aside-and-articles {
         display: flex;
         flex-direction: row-reverse;
         gap: 1em;
@@ -291,11 +307,11 @@ nav ul li a{
         margin: 0 auto;
     }
 
-    .aside-and-articles .aside-container{
+    .aside-and-articles .aside-container {
         flex: 1;
     }
 
-    .aside-and-articles .articles-container{
+    .aside-and-articles .articles-container {
         flex: 2;
     }
 }
