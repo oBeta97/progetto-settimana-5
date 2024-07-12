@@ -11,6 +11,17 @@
     color: #191919
 }
 
+header{
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+body section{
+    border-bottom: 1px solid #E3E5E7;
+}
+
 header,
 .stay-curious{
     background-color: #ffc017;
@@ -18,16 +29,23 @@ header,
 }
 
 .header-container,
-.buttons{
+.buttons,
+.section-title,
+.article,
+.article-container .author,
+.trending-on-medium article .article-details,
+.tag-container ul {
     display: flex;
     flex-direction: row;
 }
 
 .header-container,
-.article-container{
+.article-container,
+.trending-container,
+.aside-container{
     width: 90%;
     margin: 0 auto;
-    padding: 1em 0;
+    padding: 2em 0;
 }
 
 .buttons{
@@ -54,6 +72,7 @@ header,
     display: none;
 }
 
+.article-container,
 .stay-curious article{
     display: flex;
     flex-direction: column;
@@ -69,4 +88,81 @@ header,
 
 .stay-curious article h2{
     font-size: 1.2em;
+}
+
+.section-title{
+    align-items: center;
+    gap: 0.8em;
+}
+
+.section-title>*{
+    display: inline-block;
+}
+
+
+.section-title h2{
+    font-size: 0.8em;
+}
+
+
+.trending-on-medium article{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.article-container{
+    padding: 0;
+}
+
+.article{
+    gap: 1em;
+}
+
+.trending-on-medium article .article-details{
+    justify-content: space-between;
+}
+
+.article-counter h4{
+    color: #E3E5E7;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.author img{
+    border-radius: 50%;
+    width: 1.5em;
+}
+
+.article-container .author{
+    gap: 0.5em;
+    align-items: center;
+}
+
+.article-container .author h4{
+    font-size: 0.8em;
+}
+
+.article-container .article-details p,
+.tag-container li{
+    color: #747474;
+}
+
+.thin-font{
+    font-weight: 300;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+.tag-container li{
+    padding: 1em;
+    border: 1px solid #747474;
+    width: fit-content;
+}
+
+.tag-container ul{
+    flex-wrap: wrap; 
+    gap: 1em;
 }
